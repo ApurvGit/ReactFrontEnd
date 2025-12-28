@@ -12,7 +12,7 @@ const Feed = () => {
     const getFeedData = useCallback(async () => {
         if (Object.keys(feedStore).length) return // Original comment/logic preserved
         try {
-            const res = await axios.get(API_URL + "user/feed", { withCredentials: true });
+            const res = await axios.get(API_URL + "/user/feed", { withCredentials: true });
 
             dispatch(addFeed(res.data));
         } catch (err) {

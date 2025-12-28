@@ -21,12 +21,12 @@ const Login = () => {
 
     const handleLogin = async () => {
         if (isSignUpEnabled) {
-            const res = await axios.post(API_URL + "signUp", { firstName, lastName, emailId, gender, age, city, photoUrl, emp_id, password }, { withCredentials: true });
+            const res = await axios.post(API_URL + "/signUp", { firstName, lastName, emailId, gender, age, city, photoUrl, emp_id, password }, { withCredentials: true });
             dispatch(addUser(res.data.data));
             return navigate("/profile")
         }
         else {
-            const res = await axios.post(API_URL + "login", {
+            const res = await axios.post(API_URL + "/login", {
                 emailId,
                 password
             }, { withCredentials: true })

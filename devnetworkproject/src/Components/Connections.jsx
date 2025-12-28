@@ -10,7 +10,7 @@ const Connections = () => {
     const getConnections = async () => {
         try {
             if (Object.keys(connectionSelector).length > 0) return
-            const res = await axios.get(API_URL + 'user/connections', { withCredentials: true });
+            const res = await axios.get(API_URL + '/user/connections', { withCredentials: true });
             console.log("RES", res.data)
             dispatch(addConnection(res.data?.connectionRequests))
         } catch (error) {

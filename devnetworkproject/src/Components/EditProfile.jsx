@@ -18,7 +18,7 @@ const EditProfile = ({ user }) => {
     console.log(user)
     const handleSave = async () => {
         try {
-            const res = await axios.patch(API_URL + "profile/editProfile", { city, emailId }, { withCredentials: true });
+            const res = await axios.patch(API_URL + "/profile/editProfile", { city, emailId }, { withCredentials: true });
             console.log(res)
             dispatch(addUser(res.data))
         } catch (e) {

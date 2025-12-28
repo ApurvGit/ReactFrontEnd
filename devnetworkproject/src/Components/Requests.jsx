@@ -14,7 +14,7 @@ const Requests = () => {
     const requestSelector = useSelector(store => store.connections);
     const fetchRequests = async () => {
         try {
-            const res = await axios.get(API_URL + 'user/requests/received', { withCredentials: true })
+            const res = await axios.get(API_URL + '/user/requests/received', { withCredentials: true })
             console.log(res.data)
             dispatch(addRequests(res.data))
 
