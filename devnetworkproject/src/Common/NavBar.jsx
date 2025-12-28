@@ -13,7 +13,7 @@ const NavBar = () => {
     const fetchUser = async () => {
         if (user) return null;
         try {
-            const res = await axios.get(API_URL + 'profile', { withCredentials: true });
+            const res = await axios.get(API_URL + '/profile', { withCredentials: true });
             dispatch(addUser(res.data))
         } catch (err) {
             console.log(err)
